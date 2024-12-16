@@ -1,4 +1,4 @@
-package math;
+package vsu.kg12.karasev_a_e;
 
 public interface Vector<T extends Vector<T>> {
 

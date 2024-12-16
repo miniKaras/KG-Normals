@@ -1,13 +1,13 @@
-package objreader;
+package vsu.kg12.karasev_a_e.objreader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import math.Vector2f;
-import math.Vector3f;
-import model.Model;
-import model.Polygon;
+import vsu.kg12.karasev_a_e.Vector2f;
+import vsu.kg12.karasev_a_e.Vector3f;
+import vsu.kg12.karasev_a_e.model.Model;
+import vsu.kg12.karasev_a_e.model.Polygon;
 
 public class ObjReader {
 

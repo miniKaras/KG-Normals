@@ -1,6 +1,6 @@
-package math;
+package vsu.kg12.karasev_a_e;
 
-import static math.EPS.EPS;
+import static vsu.kg12.karasev_a_e.EPS.EPS;
 
 public class Vector2f implements Vector<Vector2f> {
 	public Vector2f(float x, float y) {

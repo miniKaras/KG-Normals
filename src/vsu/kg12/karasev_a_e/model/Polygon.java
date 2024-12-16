@@ -1,4 +1,4 @@
-package model;
+package vsu.kg12.karasev_a_e.model;
 
 import java.util.ArrayList;
 import java.util.List;
