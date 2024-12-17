@@ -1,7 +1,7 @@
 package vsu.kg12.karasev_a_e.model;
 
-import vsu.kg12.karasev_a_e.Vector2f;
-import vsu.kg12.karasev_a_e.Vector3f;
+import vsu.kg12.karasev_a_e.math.Vector2f;
+import vsu.kg12.karasev_a_e.math.Vector3f;
 
 import java.util.ArrayList;
 

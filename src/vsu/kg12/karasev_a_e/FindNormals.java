@@ -1,5 +1,6 @@
 package vsu.kg12.karasev_a_e;
 
+import vsu.kg12.karasev_a_e.math.Vector3f;
 import vsu.kg12.karasev_a_e.model.Model;
 import vsu.kg12.karasev_a_e.model.Polygon;
 
@@ -33,7 +34,7 @@ public class FindNormals {
 
         return normals;
     }*/
-    public static ArrayList<Vector3f> findNormals(Model model) {
+    public static void findNormals(Model model) {
         List<Polygon> polygons = model.polygons;
         List<Vector3f> vertices = model.vertices;
 
@@ -63,7 +64,12 @@ public class FindNormals {
             vertexNormals.add(findVertexNormal(associatedNormals));
         }
 
-        return vertexNormals;
+        model.normals = vertexNormals;
+        for (Polygon polygon : polygons) {
+            List<Integer> vertexIndices = polygon.getVertexIndices();
+            ArrayList<Integer> normalIndices = new ArrayList<>(vertexIndices);
+            polygon.setNormalIndices(normalIndices);
+        }
     }
 
     public static Vector3f findPolygonsNormals(Vector3f... vs) {
