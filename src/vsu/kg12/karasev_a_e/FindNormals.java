@@ -7,33 +7,6 @@ import vsu.kg12.karasev_a_e.model.Polygon;
 import java.util.*;
 
 public class FindNormals {
-    /*public static ArrayList<Vector3f> findNormals(Model m) {
-        List<Polygon> polygons = m.polygons;
-        List<Vector3f> vertices = m.vertices;
-
-        ArrayList<Vector3f> temporaryNormals = new ArrayList<>();
-        ArrayList<Vector3f> normals = new ArrayList<>();
-
-        for (Polygon p : polygons) {
-            temporaryNormals.add(FindNormals.findPolygonsNormals(vertices.get(p.getVertexIndices().get(0)),
-                    vertices.get(p.getVertexIndices().get(1)), vertices.get(p.getVertexIndices().get(2))));
-        }
-
-        Map<Integer, Set<Vector3f>> vertexPolygonsMap = new HashMap<>();
-        for (int j = 0; j < polygons.size(); j++) {
-            List<Integer> vertexIndices = polygons.get(j).getVertexIndices();
-            Vector3f vec = temporaryNormals.get(j);
-            for (Integer index : vertexIndices) {
-                vertexPolygonsMap.computeIfAbsent(index, k -> new HashSet<>()).add(vec);
-            }
-        }
-
-        for (int i = 0; i < vertices.size(); i++) {
-            normals.add(findVertexNormals(vertexPolygonsMap.get(i)));
-        }
-
-        return normals;
-    }*/
     public static void findNormals(Model model) {
         List<Polygon> polygons = model.polygons;
         List<Vector3f> vertices = model.vertices;
@@ -90,12 +63,13 @@ public class FindNormals {
         }
 
         Vector3f summedNormal = new Vector3f(0, 0, 0);
+        int count = normals.size();
         for (Vector3f normal : normals) {
             summedNormal.x += normal.x;
             summedNormal.y += normal.y;
             summedNormal.z += normal.z;
         }
-        return normalize(summedNormal);
+        return normalize(new Vector3f(summedNormal.x / count , summedNormal.y / count,summedNormal.z / count));
     }
 
     public static double determinant(Vector3f a, Vector3f b, Vector3f c) {

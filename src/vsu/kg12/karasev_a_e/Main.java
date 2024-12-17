@@ -16,6 +16,6 @@ public class Main {
         ObjWriterClass writerClass = new ObjWriterClass();
         FindNormals.findNormals(model);
 
-        writerClass.write(model,"C:\\prog\\ComputerGraphicsNormals\\src\\vsu\\kg12\\karasev_a_e\\models\\Test.obj");
+        writerClass.write(model,"C:\\prog\\ComputerGraphicsNormals\\src\\vsu\\kg12\\karasev_a_e\\models\\Test1.obj");
     }
 }
